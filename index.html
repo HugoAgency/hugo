@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8f4">
+  <meta name="description" content="We’re working hard to bring you something amazing. Stay tuned!">
+  <title>Something Great Is Coming Soon</title>
+  <style>
+    :root{color-scheme:light;--ink:#263d35;--muted:#657269;--green:#557d60;--paper:#f7f8f4}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100svh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 42%,#e8efdf80,transparent 58%);pointer-events:none}
+    header,footer{width:min(1280px,100%);margin-inline:auto;padding:30px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .wordmark{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:650;letter-spacing:-.8px}
+    .wordmark svg{width:27px;height:27px}
+    .header-note{font-size:12px;color:var(--muted);letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+    .status-dot{height:6px;width:6px;border-radius:50%;background:#7e9a72;box-shadow:0 0 0 4px #7e9a7210}
+    main{flex:1;display:grid;place-items:center;padding:45px 24px 60px}
+    .content{text-align:center;width:min(760px,100%);animation:arrive .9s ease-out both}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #dce3d5;background:#edf1e7;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#54694c}
+    .badge svg{height:13px;width:13px}
+    .illustration{display:block;width:min(290px,77vw);height:auto;margin:31px auto 25px;overflow:visible}
+    .spark{transform-box:fill-box;transform-origin:center;animation:twinkle 5s ease-in-out infinite}
+    .spark.second{animation-delay:2s}
+    h1{font-size:clamp(39px,5.6vw,65px);font-weight:550;line-height:1.12;letter-spacing:-.055em;margin:0 auto 23px;max-width:700px;text-wrap:balance}
+    h1 span{color:var(--green)}
+    .description{font-size:16px;line-height:1.8;color:var(--muted);margin:0 auto;max-width:420px;text-wrap:pretty}
+    .note{margin:35px 0 0;display:flex;align-items:center;justify-content:center;gap:9px;font-size:11px;letter-spacing:.015em;color:#727c70}
+    .note:before,.note:after{content:"";height:1px;width:25px;background:#d7ded0}
+    footer{padding-top:22px;padding-bottom:26px;font-size:11px;color:#778075;border-top:1px solid #e5e8df}
+    .footer-note{display:flex;gap:6px;align-items:center}
+    .footer-note svg{width:12px;height:12px}
+    @keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes twinkle{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+    @media(max-width:600px){header,footer{padding:23px 24px}.header-note{font-size:10px}.wordmark{font-size:17px}main{padding:35px 23px 50px}.illustration{width:245px;margin-block:25px 22px}h1{max-width:440px}.description{font-size:14px;max-width:310px}footer{flex-wrap:wrap;justify-content:center;text-align:center;gap:10px}.footer-note{width:100%;justify-content:center}}
+    /* Construction-inspired direction: warm concrete, safety yellow, ink. */
+    :root{--ink:#232522;--muted:#666962;--green:#232522;--paper:#f0f0eb}
+    body:before{background:radial-gradient(ellipse at 77% 45%,#faf9f2,transparent 60%)}
+    header,footer{width:min(1440px,100%);padding-inline:clamp(24px,5vw,80px)}
+    header{padding-top:32px;padding-bottom:32px}
+    .wordmark{font-size:22px;letter-spacing:-1px}
+    .wordmark svg{color:#232522}
+    .status-dot{background:#e7ae19;box-shadow:0 0 0 4px #e7ae1915}
+    main{width:min(1440px,100%);margin:auto;padding:48px clamp(24px,5vw,80px) 80px}
+    .content{width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;text-align:left}
+    .hero-copy{position:relative;z-index:1}
+    .badge{background:#f9eec9;border-color:#e6d59a;color:#6b551b;font-size:10px;letter-spacing:.1em;padding:9px 12px}
+    h1{font-size:clamp(46px,5.3vw,78px);line-height:1.07;letter-spacing:-.065em;font-weight:650;margin:30px 0 24px;max-width:650px;text-wrap:initial}
+    h1 span{display:inline-block;position:relative;isolation:isolate}
+    h1 span:after{content:"";position:absolute;left:0;right:-6px;bottom:1px;height:.2em;background:#f4c434;z-index:-1;transform:rotate(-1.5deg)}
+    .description{max-width:360px;margin:0;font-size:16px;line-height:1.9}
+    .note{justify-content:flex-start;margin-top:40px;font-size:11px}
+    .note:before{width:26px;background:#d4aa29}.note:after{display:none}
+    .scene{width:100%;position:relative}
+    .illustration{width:100%;max-width:610px;margin:0 auto;overflow:visible}
+    .hanging-sign{transform-origin:164px 0;animation:sway 7s ease-in-out infinite}
+    .scene-caption{font-size:9px;letter-spacing:.18em;text-transform:uppercase;text-align:center;color:#77796e;margin:15px 0 0}
+    footer{border-top-color:#daddd3;font-size:11px}
+    @keyframes sway{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
+    @media(min-width:1600px){main{padding-block:80px 110px}}
+    @media(max-width:760px){header{padding-block:24px}.header-note{font-size:10px;max-width:165px;line-height:1.6}.content{grid-template-columns:1fr;gap:34px;text-align:center}.hero-copy{padding-top:10px}h1{font-size:clamp(43px,8.5vw,64px);max-width:600px;margin:24px auto}.description{margin-inline:auto;font-size:14px;max-width:330px}.note{justify-content:center;margin-top:24px}.scene{max-width:430px;margin:auto}.illustration{width:100%;margin:0}.scene-caption{margin-top:3px}main{padding-top:25px;padding-bottom:40px}footer{justify-content:center;flex-wrap:wrap;gap:10px}.footer-note{width:auto}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <span class="header-note"><span class="status-dot" aria-hidden="true"></span>A little work. A lot of possibility.</span>
+  </header>
+  <main>
+    <div class="content">
+      <div class="hero-copy">
+      <span class="badge"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 14h14M5 14V9a5 5 0 0 1 10 0v5M8 4v5m4-5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Under Construction</span>
+      <h1>Something<br>Great Is<br><span>Coming Soon</span></h1>
+      <p class="description">We’re working hard to bring you something amazing. Stay tuned!</p>
+      <p class="note">Good things take a little time.</p>
+      </div>
+      <div class="scene">
+      <svg class="illustration" viewBox="0 0 600 520" role="img" aria-labelledby="illustration-title">
+        <title id="illustration-title">Yellow construction excavator beside a suspended coming-soon sign.</title>
+        <defs>
+          <pattern id="safety" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="20" height="20" fill="#f3c52f"/><rect width="9" height="20" fill="#292b26"/></pattern>
+          <linearGradient id="yellow" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#ffd34c"/><stop offset="1" stop-color="#eeb11b"/></linearGradient>
+        </defs>
+        <circle cx="340" cy="275" r="199" fill="#efc23a" opacity=".74"/>
+        <circle cx="340" cy="275" r="220" fill="none" stroke="#dcded3" stroke-dasharray="3 9"/>
+        <ellipse cx="331" cy="461" rx="213" ry="12" fill="#292b26" opacity=".07"/>
+        <g class="hanging-sign">
+          <path d="M151 0v93m25-93v93" stroke="#77796e" stroke-width="2"/>
+          <rect x="145" y="87" width="37" height="44" rx="9" fill="#292b26"/>
+          <path d="M150 97h27v24h-27z" fill="url(#safety)"/>
+          <circle cx="164" cy="106" r="5" fill="#f3f1df" stroke="#292b26" stroke-width="2"/>
+          <path d="M164 132v10c-14 0-12 18-1 18 8 0 12-7 7-12M162 158l-69 38m74-38 69 38" fill="none" stroke="#292b26" stroke-width="3" stroke-linecap="round"/>
+          <rect x="65" y="191" width="198" height="84" rx="9" fill="url(#safety)"/>
+          <rect x="73" y="199" width="182" height="68" rx="5" fill="#f6cb3b" stroke="#292b26" stroke-width="1.5"/>
+          <text x="164" y="248" text-anchor="middle" fill="#292b26" font-family="Arial,sans-serif" font-size="45" font-weight="900" letter-spacing="-2">SOON</text>
+          <g fill="#f6f1d6" stroke="#9c842f"><circle cx="83" cy="209" r="3"/><circle cx="245" cy="209" r="3"/><circle cx="83" cy="257" r="3"/><circle cx="245" cy="257" r="3"/></g>
+        </g>
+        <g stroke="#292b26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <path d="m360 361-87-156-25 9 73 169Z" fill="url(#yellow)"/>
+          <path d="m271 207-64 77 13 13 68-64Z" fill="#f7c633"/>
+          <path d="m206 283-22 76 15 3 23-70" fill="#f4c335"/>
+          <path d="m190 345-18 38-17 5 6 18h49l-8-50Z" fill="#40443c"/>
+          <path d="m208 310-13 41m88-110 54 96" fill="none" stroke="#797d70" stroke-width="6"/>
+          <path d="m209 302-8 25m90-73 38 66" stroke="#ededdf" stroke-width="3"/>
+          <path d="M283 211c23-18 32 10 45 32l49 91" fill="none" stroke-width="4"/>
+          <path d="M311 344h52v52h-60Z" fill="#323830"/>
+          <path d="M356 313h58l16 81h-78Z" fill="url(#yellow)"/>
+          <path d="M365 322h40l10 43h-50Z" fill="#d9e3de"/>
+          <path d="M387 322v43m-22 10h47" fill="none" stroke-width="2"/>
+          <path d="M327 384h156v39H309v-26Z" fill="url(#yellow)"/>
+          <path d="M430 365h44q12 0 12 13v23h-56Z" fill="#f8ca3e"/>
+          <path d="M440 378h31m-31 7h31" fill="none" stroke-width="2"/>
+          <rect x="298" y="418" width="202" height="40" rx="20" fill="#383d35"/>
+          <rect x="310" y="427" width="177" height="22" rx="11" fill="#5b6053"/>
+          <g fill="#30362e" stroke-width="2"><circle cx="325" cy="438" r="8"/><circle cx="356" cy="438" r="8"/><circle cx="387" cy="438" r="8"/><circle cx="418" cy="438" r="8"/><circle cx="449" cy="438" r="8"/><circle cx="476" cy="438" r="8"/></g>
+          <circle cx="274" cy="219" r="6" fill="#f7e3a0" stroke-width="2"/>
+          <circle cx="214" cy="289" r="5" fill="#f7e3a0" stroke-width="2"/>
+        </g>
+        <g stroke="#292b26" stroke-width="2" stroke-linejoin="round"><path d="m103 457 14-45h10l14 45Z" fill="#efb631"/><path d="M110 435h24m-28 12h32" stroke="#f5f1dd" stroke-width="6"/><path d="M99 458h47" stroke-width="5" stroke-linecap="round"/></g>
+        <path d="M76 473h459" stroke="#babcaf" stroke-width="1.5"/>
+        <g fill="none" stroke="#969987" stroke-width="1.5" stroke-linecap="round"><path d="M482 148v12m-6-6h12M89 326v10m-5-5h10"/></g>
+      </svg>
+      <p class="scene-caption">A little work. A lot of possibility.</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <span>© 2026. All rights reserved.</span>
+    <span class="footer-note">Made with care <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13S2 9.5 2 5.5C2 2 6 1.7 8 4c2-2.3 6-2 6 1.5C14 9.5 8 13 8 13Z" stroke="currentColor" stroke-width="1.2"/></svg></span>
+  </footer>
+</body>
+</html>
