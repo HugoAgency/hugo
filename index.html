@@ -60,24 +60,38 @@
     @keyframes sway{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
     @media(min-width:1600px){main{padding-block:80px 110px}}
     @media(max-width:760px){header{padding-block:24px}.header-note{font-size:10px;max-width:165px;line-height:1.6}.content{grid-template-columns:1fr;gap:34px;text-align:center}.hero-copy{padding-top:10px}h1{font-size:clamp(43px,8.5vw,64px);max-width:600px;margin:24px auto}.description{margin-inline:auto;font-size:14px;max-width:330px}.note{justify-content:center;margin-top:24px}.scene{max-width:430px;margin:auto}.illustration{width:100%;margin:0}.scene-caption{margin-top:3px}main{padding-top:25px;padding-bottom:40px}footer{justify-content:center;flex-wrap:wrap;gap:10px}.footer-note{width:auto}}
+    .language-switch{display:inline-flex;gap:4px;flex-shrink:0;padding:4px;border:1px solid #d6d9cf;border-radius:999px;direction:ltr}
+    .language-switch button{border:0;border-radius:999px;min-height:36px;padding:7px 13px;background:transparent;color:#565d51;font:inherit;font-size:12px;cursor:pointer;transition:background .2s,color .2s}
+    .language-switch button[aria-pressed="true"]{background:#292b26;color:#fff}
+    .language-switch button:focus-visible{outline:2px solid #9b7300;outline-offset:3px}
+    .scene{direction:ltr}
+    html[lang="ar"] body{font-family:Tahoma,"Segoe UI",Arial,sans-serif}
+    html[lang="ar"] .content{text-align:right}
+    html[lang="ar"] h1{letter-spacing:0;line-height:1.45;font-size:clamp(38px,4.6vw,64px)}
+    html[lang="ar"] .badge,html[lang="ar"] .scene-caption{letter-spacing:0}
+    @media(max-width:760px){html[lang="ar"] .content{text-align:center}html[lang="ar"] h1{font-size:clamp(36px,7vw,54px)}header{gap:12px}.header-note{max-width:145px}.language-switch button{padding-inline:10px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
   </style>
 </head>
 <body>
   <header>
-    <span class="header-note"><span class="status-dot" aria-hidden="true"></span>A little work. A lot of possibility.</span>
+    <span class="header-note"><span class="status-dot" aria-hidden="true"></span><span data-i18n="tagline">A little work. A lot of possibility.</span></span>
+    <nav class="language-switch" aria-label="Language / اللغة">
+      <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+      <button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
+    </nav>
   </header>
   <main>
     <div class="content">
       <div class="hero-copy">
-      <span class="badge"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 14h14M5 14V9a5 5 0 0 1 10 0v5M8 4v5m4-5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Under Construction</span>
-      <h1>Something<br>Great Is<br><span>Coming Soon</span></h1>
-      <p class="description">We’re working hard to bring you something amazing. Stay tuned!</p>
-      <p class="note">Good things take a little time.</p>
+      <span class="badge"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 14h14M5 14V9a5 5 0 0 1 10 0v5M8 4v5m4-5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="badge">Under Construction</span></span>
+      <h1 id="headline">Something<br>Great Is<br><span>Coming Soon</span></h1>
+      <p class="description" data-i18n="description">We’re working hard to bring you something amazing. Stay tuned!</p>
+      <p class="note" data-i18n="note">Good things take a little time.</p>
       </div>
       <div class="scene">
       <svg class="illustration" viewBox="0 0 600 520" role="img" aria-labelledby="illustration-title">
-        <title id="illustration-title">Yellow construction excavator beside a suspended coming-soon sign.</title>
+        <title id="illustration-title" data-i18n="illustration">Yellow construction excavator beside a suspended coming-soon sign.</title>
         <defs>
           <pattern id="safety" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="20" height="20" fill="#f3c52f"/><rect width="9" height="20" fill="#292b26"/></pattern>
           <linearGradient id="yellow" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#ffd34c"/><stop offset="1" stop-color="#eeb11b"/></linearGradient>
@@ -93,7 +107,7 @@
           <path d="M164 132v10c-14 0-12 18-1 18 8 0 12-7 7-12M162 158l-69 38m74-38 69 38" fill="none" stroke="#292b26" stroke-width="3" stroke-linecap="round"/>
           <rect x="65" y="191" width="198" height="84" rx="9" fill="url(#safety)"/>
           <rect x="73" y="199" width="182" height="68" rx="5" fill="#f6cb3b" stroke="#292b26" stroke-width="1.5"/>
-          <text x="164" y="248" text-anchor="middle" fill="#292b26" font-family="Arial,sans-serif" font-size="45" font-weight="900" letter-spacing="-2">SOON</text>
+          <text data-i18n="sign" id="sign-text" x="164" y="248" text-anchor="middle" fill="#292b26" font-family="Arial,sans-serif" font-size="45" font-weight="900" letter-spacing="-2">SOON</text>
           <g fill="#f6f1d6" stroke="#9c842f"><circle cx="83" cy="209" r="3"/><circle cx="245" cy="209" r="3"/><circle cx="83" cy="257" r="3"/><circle cx="245" cy="257" r="3"/></g>
         </g>
         <g stroke="#292b26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
@@ -121,13 +135,70 @@
         <path d="M76 473h459" stroke="#babcaf" stroke-width="1.5"/>
         <g fill="none" stroke="#969987" stroke-width="1.5" stroke-linecap="round"><path d="M482 148v12m-6-6h12M89 326v10m-5-5h10"/></g>
       </svg>
-      <p class="scene-caption">A little work. A lot of possibility.</p>
+      <p class="scene-caption" data-i18n="tagline">A little work. A lot of possibility.</p>
       </div>
     </div>
   </main>
   <footer>
-    <span>© 2026. All rights reserved.</span>
-    <span class="footer-note">Made with care <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13S2 9.5 2 5.5C2 2 6 1.7 8 4c2-2.3 6-2 6 1.5C14 9.5 8 13 8 13Z" stroke="currentColor" stroke-width="1.2"/></svg></span>
+    <span data-i18n="copyright">© 2026. All rights reserved.</span>
+    <span class="footer-note"><span data-i18n="care">Made with care</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13S2 9.5 2 5.5C2 2 6 1.7 8 4c2-2.3 6-2 6 1.5C14 9.5 8 13 8 13Z" stroke="currentColor" stroke-width="1.2"/></svg></span>
   </footer>
+  <script>
+    const translations = {
+      en: {
+        title: 'Something Great Is Coming Soon',
+        headline: ['Something', 'Great Is', 'Coming Soon'],
+        badge: 'Under Construction',
+        description: 'We’re working hard to bring you something amazing. Stay tuned!',
+        note: 'Good things take a little time.',
+        tagline: 'A little work. A lot of possibility.',
+        illustration: 'Yellow construction excavator beside a suspended coming-soon sign.',
+        sign: 'SOON', copyright: '© 2026. All rights reserved.', care: 'Made with care'
+      },
+      ar: {
+        title: 'شيء رائع قادم قريبًا',
+        headline: ['شيء رائع', 'قادم', 'قريبًا'],
+        badge: 'قيد الإنشاء',
+        description: 'نعمل بكل جهد لنقدّم لكم شيئًا مميزًا. ترقّبونا!',
+        note: 'الأشياء الجميلة تستحق الانتظار.',
+        tagline: 'نبني اليوم، لنُبدع غدًا.',
+        illustration: 'حفّارة صفراء بجانب لافتة معلّقة مكتوب عليها قريبًا.',
+        sign: 'قريبًا', copyright: '© 2026. جميع الحقوق محفوظة.', care: 'صُنع بعناية'
+      }
+    };
+    function setLanguage(language) {
+      const selected = language === 'ar' ? 'ar' : 'en';
+      const copy = translations[selected];
+      document.documentElement.lang = selected;
+      document.documentElement.dir = selected === 'ar' ? 'rtl' : 'ltr';
+      document.title = copy.title;
+      document.querySelector('meta[name="description"]').content = copy.description;
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        element.textContent = copy[element.dataset.i18n];
+      });
+      const headline = document.getElementById('headline');
+      headline.replaceChildren();
+      copy.headline.forEach((line, index) => {
+        if (index) headline.append(document.createElement('br'));
+        const element = document.createElement('span');
+        element.textContent = line;
+        if (index === 2) headline.append(element);
+        else headline.append(document.createTextNode(line));
+      });
+      const sign = document.getElementById('sign-text');
+      sign.setAttribute('letter-spacing', selected === 'ar' ? '0' : '-2');
+      sign.setAttribute('direction', selected === 'ar' ? 'rtl' : 'ltr');
+      document.querySelectorAll('[data-language]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === selected));
+      });
+      try { localStorage.setItem('site-language', selected); } catch {}
+    }
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+    let preferredLanguage;
+    try { preferredLanguage = localStorage.getItem('site-language'); } catch {}
+    setLanguage(preferredLanguage || (navigator.language.startsWith('ar') ? 'ar' : 'en'));
+  </script>
 </body>
 </html>
